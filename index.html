@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Démineur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Démineur</h1>
+    <header>
+        <select name="difficulte" id="difficulte">
+            <option value="9,10">Débutant (9x9, 10 bombes)</option>
+            <option value="16,40">Intermédiaire (16x16, 40 bombes)</option>
+            <option value="22,100">Expert (22x22, 100 bombes)</option>
+            <option value="30,250">Maître (30x30, 250 bombes)</option>
+        </select>
+        <button id="debutPartie">Nouvelle Partie</button>
+        <h4 id="temps">
+            <u>Temps :</u>&nbsp;
+            <span id="affichageTemps">00 : 00</span>
+        </h4>
+        </div>
+    </header>
+    <hr />
+    <main></main>
+    <footer></footer>
+    <script src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="classes.js"></script>
+    <script type="text/javascript">
+        var plateau = null;
+        $(document).ready(function () {
+            $('button#debutPartie').on('click', function () {
+                if (plateau !== null) {
+                    plateau.stop();
+                }
+                var reglages = $('select#difficulte').val().split(',').map(function (v) {
+                    return parseInt(v, 10);
+                });
+                plateau = new Plateau(reglages[0], reglages[1]);
+            });
+        });
+    </script>
+</body>
+
+</html>

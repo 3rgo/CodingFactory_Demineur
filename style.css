@@ -1,0 +1,38 @@
+body * {
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+h4#temps {
+    text-align: left;
+    display: inline;
+}
+
+table#plateau {
+    border-collapse: collapse;
+    margin: 10px auto;
+    padding: 0;
+}
+
+table#plateau tr {
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+table#plateau td.case {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0;
+    padding: 0;
+    border: 1px;
+}
+
+table#plateau td.case img {
+    width: 20px;
+    height: 20px;
+}
